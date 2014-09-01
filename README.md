@@ -3,7 +3,7 @@ cryptish
 
 A fast and furious set of crypto utilities.
 
-(with fixedTimeComparison from [Cryptiles](https://github.com/hueniverse/cryptiles) and copyright Eran Hammer)
+(with fixedTimeComparison, randomBits, randomString from [Cryptiles](https://github.com/hueniverse/cryptiles) and copyright Eran Hammer)
 
 ## Methods
 
