@@ -37,8 +37,10 @@ describe('Cryptish', function () {
   });
 
   describe('#generateSalt', function() {
-    it("should create random string of the specified length in bits ", function(done){
+    it("should create a base64 encoded string of the specified length in bits ", function(done){
       var string = Cryptish.generateSalt(64);
+      var buffer = Cryptish.base64toBinary(string);
+      expect(buffer.length).to.equal(64/ 8);
       done();
     });
   });
@@ -46,6 +48,8 @@ describe('Cryptish', function () {
   describe('#hashPassword', function() {
     it("should create derived password with the algorithm, salt, derived password and iterations in a string ", function(done){
       var string = Cryptish.hashPassword('welcome');
+      var parts = string.split('::');
+      expect(parts.length).to.equal(4);
       done();
     });
   });
