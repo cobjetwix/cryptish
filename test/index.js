@@ -1,0 +1,79 @@
+'use strict';
+
+// Load modules
+
+var Lab = require('lab');
+var Cryptish = require('../lib/');
+
+// Declare internals
+
+var internals = {};
+
+
+// Test shortcuts
+
+var lab = exports.lab = Lab.script();
+var before = lab.before;
+var after = lab.after;
+var describe = lab.describe;
+var it = lab.it;
+var expect = Lab.expect;
+
+describe('Cryptish', function () {
+  describe('#randomString', function() {
+    it("should create a randomString of the specified length ", function(done){
+      var string = Cryptish.randomString(20);
+      expect(string.length).to.equal(20);
+      done();
+    });
+  });
+
+  describe('#randomBits', function() {
+    it("should create randombits of the specified length ", function(done){
+      var buffer = Cryptish.randomBits(64);
+      expect(buffer.length).to.equal(64 / 8);
+      done();
+    });
+  });
+
+  describe('#generateSalt', function() {
+    it("should create random string of the specified length in bits ", function(done){
+      var string = Cryptish.generateSalt(64);
+      done();
+    });
+  });
+
+  describe('#hashPassword', function() {
+    it("should create derived password with the algorithm, salt, derived password and iterations in a string ", function(done){
+      var string = Cryptish.hashPassword('welcome');
+      done();
+    });
+  });
+
+  describe('#verifyPassword', function() {
+    it("should verify a correct password ", function(done){
+      var user = internals.user();
+      var result = Cryptish.verifyPassword('welcome', user.password);
+      expect(result).to.equal(true);
+      done();
+    });
+  });
+
+  describe('#verifyPassword', function() {
+    it("should fail an incorrect password ", function(done){
+      var user = internals.user();
+      var result = Cryptish.verifyPassword('bob', user.password);
+      expect(result).to.equal(false);
+      done();
+    });
+  });
+});
+
+internals.user = function() {
+  return {
+    username: "tony",
+    displayname: "Anthony Bouch",
+    description: "Blah",
+    password: 'pbkdf2::vaWdIciK10g=::10000::lcJp3CzAQwwanwQN0L4Onqbgj5MCChclabMIjxvny71j1J4JuuE/gCXh6CJGU+9R1nJbkHspmLB2Bo+Nns5/OCH3ZRtsKnizaTrFfbEhpOAOdq5jDlAL9BfLgzp/PF+HsUXUCgJHUtGqk88cvZKN3y/UHftG8ScglRzx9yzrPLc='
+  };
+}
