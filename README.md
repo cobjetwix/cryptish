@@ -24,3 +24,9 @@ Returns true or false for a comparision of a pbkdf2 cryptographically hashed pas
 
 ### `fixedTimeComparison(<String> a, <String> b)`
 Compare two strings using fixed time algorithm (to prevent time-based analysis of MAC digest match). Returns `true` if the strings match, `false` if they differ.
+
+### `binaryToBase64(<Buffer> buffer)`
+Convert a buffer to a base64 encoded string
+
+### `base64ToBuffer(<String> string)`
+Convert a base64 encoded string to a binary buffer.
