@@ -30,3 +30,6 @@ Convert a buffer to a base64 encoded string
 
 ### `base64ToBuffer(<String> string)`
 Convert a base64 encoded string to a binary buffer.
+
+### `sha256(<String> string)`
+Perform sha256 hash on input returning hex digest.

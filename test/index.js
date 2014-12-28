@@ -71,6 +71,14 @@ describe('Cryptish', function () {
       done();
     });
   });
+
+  describe('#sha256', function() {
+    it("should generate a hex digest for sha256 hash ", function(done){
+      var result = Cryptish.sha256('bob');
+      expect(result).to.equal('81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9');
+      done();
+    });
+  });
 });
 
 internals.user = function() {
