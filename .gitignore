@@ -7,9 +7,14 @@ lib-cov
 *.pid
 *.gz
 
+.idea
+ 
 pids
 logs
 results
-
+ 
 node_modules
+bower_components
+.sass-cache
 npm-debug.log
+vault.json

@@ -80,4 +80,4 @@ internals.user = function() {
     description: "Blah",
     password: 'pbkdf2::vaWdIciK10g=::10000::lcJp3CzAQwwanwQN0L4Onqbgj5MCChclabMIjxvny71j1J4JuuE/gCXh6CJGU+9R1nJbkHspmLB2Bo+Nns5/OCH3ZRtsKnizaTrFfbEhpOAOdq5jDlAL9BfLgzp/PF+HsUXUCgJHUtGqk88cvZKN3y/UHftG8ScglRzx9yzrPLc='
   };
-}
+};
